@@ -9,8 +9,8 @@
         <link rel="stylesheet" type="text/css" href="{!! asset('docs.css') !!}" >
         <link rel = "stylesheet" href = "{!! asset('css/bootstrap.min.css') !!}">
         <link rel = "stylesheet" href = "{!! asset('css/bootstrap-theme.min.css') !!}">
-        <script src = "{!! asset('js/bootstrap.js') !!}"></script>
         <script src="{!! asset('js/jquery-3.2.1.js') !!}"></script>
+        <script src = "{!! asset('js/bootstrap.js') !!}"></script>
         
         <title>@yield('title')</title>
 
@@ -49,7 +49,7 @@
             }
 
             .content {
-                text-align: center;
+                /* text-align: center; */
             }
 
             .title {
