@@ -20,5 +20,10 @@ class Ticket extends Model
     {
         return $this->title;
     }
-    
+
+    public function comment()
+    {
+        return $this->hasMany('mywork\Comment', 'post_id');
+    }
+
 }
