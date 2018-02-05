@@ -5,7 +5,8 @@ namespace mywork\Http\Controllers;
 use Illuminate\Http\Request;
 
 use mywork\Comment;
-use mywork\app\Http\Requests\CommentFormRequest;
+// use mywork\app\Http\Requests\CommentFormRequest;
+use mywork\Http\Requests\CommentFormRequest;
 use mywork\Http\Controllers\Controller;
 
 
