@@ -1,5 +1,5 @@
 @extends('master')
-@section ('title', 'Edit a ticket')
+@section ('title', 'New Role')
 
 @section('content')
   <div class="container col-md-8 col-md-offset-2">
@@ -16,28 +16,29 @@
         <!-- <input type="hidden" name="_token" value="{!! csrf_token() !!}"> -->
         {{ csrf_field() }}
         <fieldset>
-          <legend>Edit ticket</legend>
+          <legend>Create a new role</legend>
             <div class="form-group">
-              <label for="title" class="col-lg-2 control-label">Title</label>
+              <label for="name" class="col-lg-2 control-label">Name</label>
               <div class="col-lg-10">
-                <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="{!! $ticket->title !!}">
+                <input type="text" class="form-control" id="name" placeholder="Name" name="name">
               </div>
             </div>
             <div class="form-group">
-              <label for="content" class="col-lg-2 control-label">Content</label>
+              <label for="display_name" class="col-lg-2 control-label">Display Name</label>
               <div class="col-lg-10">
-                <textarea class="form-control" rows="3" id="content" name="content" >{!! $ticket->content !!}</textarea>
+                <input type="text" class="form-control" id="display_name" placeholder="Display Name" name="display_name">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-lg-2 control-label">
-                <input type="checkbox" name="status" value= "{!! $ticket->status?"":"checked"!!}" > Close this ticket?
-              </label>
+              <label for="description" class="col-lg-2 control-label">Description</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="description" placeholder="Description" name="description">
+              </div>
             </div>
             <div class="form-group">
               <div class="col-lg-10 col-lg-offset-2">
-                <a href="{!! URL::route('tickets') !!} " class="btn btn-default">Cancel</a>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
         </fieldset>

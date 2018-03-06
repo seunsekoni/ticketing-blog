@@ -3,10 +3,23 @@
 namespace mywork;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+// use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Illuminate\Support\Facades\Auth;
+
+// class User extends Authenticatable
+// {
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+    {
+    use Authenticatable, CanResetPassword;
+    use EntrustUserTrait;
+
     use Notifiable;
 
     /**
@@ -14,6 +27,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $table = 'users';
+
+    
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -26,4 +43,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function saveRoles($roles) {
+        if(!empty($roles)) {
+            $this->roles()->sync($roles);
+        } else {
+            $this->roles()->detach();
+        }
+    }
 }

@@ -5,11 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="{!! asset('app.css') !!}" >
-        <link rel="stylesheet" type="text/css" href="{!! asset('docs.css') !!}" >
+    
+        <!-- <link rel="stylesheet" type="text/css" href="{!! asset('app.css') !!}" > -->
+        <!-- <link rel="stylesheet" type="text/css" href="{!! asset('docs.css') !!}" > -->
         <link rel = "stylesheet" href = "{!! asset('css/bootstrap.min.css') !!}">
         <link rel = "stylesheet" href = "{!! asset('css/bootstrap-theme.min.css') !!}">
         <script src="{!! asset('js/jquery-3.2.1.js') !!}"></script>
+        <script src="{!! asset('js/popper.js') !!}"></script>
+        <!-- <script src="{!! asset('js/jquery-1.10.2.min.js') !!}"></script> -->
         <script src = "{!! asset('js/bootstrap.js') !!}"></script>
         
         <title>@yield('title')</title>

@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="#">Learning Laravel</a>
+        <a class="navbar-brand" href="/">Sek Support</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,10 +18,14 @@
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Member<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Member<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="/users/register">Register</a></li>
-              <li><a href="/users/login">Login</a></li>
+            @if (Auth::check())
+              <li class="dropdown-item"><a href="logout">Logout</a></li>
+            @else 
+              <li><a href="/register">Register</a></li>
+              <li><a href="/login">Login</a></li>
+            @endif
             </ul>
           </li>
               <!-- <li><a href="#">Action</a></li>
